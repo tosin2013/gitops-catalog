@@ -12,12 +12,18 @@ Do not use the `base` directory directly, as you will need to patch the `channel
 
 ## Overlays
 
-The instaconfnce options for this operator currently offeres the following *overlays*:
+The instance options for this operator currently offers the following *overlays*:
 * [aws](overlays/aws)
+* [bare-metal](overlays/bare-metal)
 
 ### AWS
 
 [aws](overlays/aws) installs a basic StorageSystem.  The StorageSystem will configure the OpenShift Container Storage Operator and also install a StorageCluster and OCSInitilization object to configure the storage cluster.  The StorageCluster is configured to work with gp2 storage on an AWS cluster.
+
+
+### Baremetal
+
+[bare-metal](overlays/bare-metal) installs a basic StorageSystem.  The StorageSystem will configure the OpenShift Container Storage Operator and also install a StorageCluster and OCSInitilization object to configure the storage cluster.  The StorageCluster is configured to work with local storage on an Baremetal cluster.
 
 In order for ODF/OCS to configure storage using this overlay it expects nodes with the following label to be present on the nodes ODF/OCS will install the cluster:
 
