@@ -62,3 +62,8 @@ kind: Kustomization
 bases:
   - github.com/redhat-cop/gitops-catalog/openshift-data-foundation-operator/instance/overlays/default?ref=main
 ```
+
+Set default storage class
+```
+oc patch storageclass ocs-storagecluster-cephfs -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+```
