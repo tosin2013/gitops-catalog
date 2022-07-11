@@ -1,48 +1,34 @@
 # OpenShift Local Storage 
 
-Installs a basic using the OpenShiftStorage Operator.
+Installs a basic using the  OpenShift Local Storage  Operator.
 
 ## Prerequisites
 
-First, install the [OpenShiftStorage Operator](../operator) in your cluster.
+First, install the [ OpenShift Local Storage  Operator](../operator) in your cluster.
 
 Do not use the `base` directory directly, as you will need to patch the `channel` based on the version of OpenShift you are using, or the version of the operator you want to use.
 
 ## Overlays
 
-The instaconfnce options for this operator currently offeres the following *overlays*:
-* [aws](overlays/aws)
+The instaconfnce options for this operator currently offers the following *overlays*:
+* [bare-metal](overlays/bare-metal)
 
-### AWS
+### bare-metal
 
-[aws](overlays/aws) installs a basic StorageSystem.  The StorageSystem will configure the OpenShift Container Storage Operator and also install a StorageCluster and OCSInitilization object to configure the storage cluster.  The StorageCluster is configured to work with gp2 storage on an AWS cluster.
-
-In order for ODF/OCS to configure storage using this overlay it expects nodes with the following label to be present on the nodes ODF/OCS will install the cluster:
-
-```
-cluster.ocs.openshift.io/openshift-storage=""
-```
-
-You will need to manually add this label to nodes if they are not already present:
-
-```
-oc label nodes <node-name> cluster.ocs.openshift.io/openshift-storage="" --overwrite=true
-```
-
-For additional automation for labeling nodes see [node-labeler](../config-helpers/node-labeler/)
+[bare-metal](overlays/bare-metal) installs a basic Local storage on baremetal.
 
 ## Usage
 
 If you have cloned the `gitops-catalog` repository, you can install the Storage System by running from the root `gitops-catalog` directory
 
 ```
-oc apply -k openshift-data-foundation-operator/instance/overlays/default
+oc apply -k openshift-local-storage/instance/overlays/default
 ```
 
 Or, without cloning:
 
 ```
-oc apply -k https://github.com/redhat-cop/gitops-catalog/openshift-data-foundation-operator/instance/overlays/default
+oc apply -k https://github.com/redhat-cop/gitops-catalog/openshift-local-storage/instance/overlays/default
 ```
 
 As part of a different overlay in your own GitOps repo:
@@ -52,5 +38,5 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 bases:
-  - github.com/redhat-cop/gitops-catalog/openshift-data-foundation-operator/instance/overlays/default?ref=main
+  - github.com/redhat-cop/gitops-catalog/openshift-local-storage/instance/overlays/default?ref=main
 ```
