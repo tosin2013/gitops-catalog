@@ -4,7 +4,7 @@ Installs a basic using the  OpenShift Local Storage  Operator.
 
 ## Prerequisites
 
-First, install the [ OpenShift Local Storage  Operator](../operator) in your cluster.
+First, install the [ OpenShift Local Storage Operator](../operator) in your cluster.
 
 Do not use the `base` directory directly, as you will need to patch the `channel` based on the version of OpenShift you are using, or the version of the operator you want to use.
 

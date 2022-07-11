@@ -5,9 +5,8 @@ Installs the OpenShift Local Storage Operator.
 Do not use the `base` directory directly, as you will need to patch the `channel` based on the version of OpenShift you are using, or the version of the operator you want to use.
 
 The current *overlays* available are for the following channels:
-* [stable-4.6](overlays/stable-4.6)
-* [stable-4.7](overlays/stable-4.7)
-* [stable-4.8](overlays/stable-4.8)
+* [stable-4.9](overlays/stable-4.9)
+* [stable-4.10](overlays/stable-4.10)
 
 ## Usage
 
