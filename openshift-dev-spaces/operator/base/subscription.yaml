@@ -1,10 +1,11 @@
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
-  name: rhacs-operator
+  name: devspaces
+  namespace: openshift-operators
 spec:
-  channel: patch-me-in-overlays
+  channel: stable
   installPlanApproval: Automatic
-  name: rhacs-operator
+  name: devspaces
   source: redhat-operators
   sourceNamespace: openshift-marketplace
