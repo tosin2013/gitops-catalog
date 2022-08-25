@@ -12,27 +12,18 @@ Do not use the `base` directory directly, as you will need to patch the `channel
 
 ## Overlays
 
-The instaconfnce options for this operator currently offeres the following *overlays*:
+The instance options for this operator currently offers the following *overlays*:
 * [aws](overlays/aws)
+* [bare-metal](overlays/bare-metal)
 * [vsphere](overlays/vsphere)
-
-In order for ODF/OCS to configure storage using the overlays, they expect nodes with the following label to be present on the nodes ODF/OCS will install the cluster:
-
-```
-cluster.ocs.openshift.io/openshift-storage=""
-```
-
-You will need to manually add this label to nodes if they are not already present:
-
-```
-oc label nodes <node-name> cluster.ocs.openshift.io/openshift-storage="" --overwrite=true
-```
-
-For additional automation for labeling nodes see [node-labeler](../config-helpers/node-labeler/)
-
+* 
 ### AWS
 
 [aws](overlays/aws) installs a basic StorageSystem.  The StorageSystem will configure the OpenShift Container Storage Operator and also install a StorageCluster and OCSInitilization object to configure the storage cluster.  The StorageCluster is configured to work with gp2 storage on an AWS cluster.
+
+### Baremetal
+
+[bare-metal](overlays/bare-metal) installs a basic StorageSystem.  The StorageSystem will configure the OpenShift Container Storage Operator and also install a StorageCluster and OCSInitilization object to configure the storage cluster.  The StorageCluster is configured to work with local storage on an Baremetal cluster.
 
 ### vSphere
 
