@@ -15,29 +15,19 @@ Do not use the `base` directory directly, as you will need to patch the `channel
 The instance options for this operator currently offers the following *overlays*:
 * [aws](overlays/aws)
 * [bare-metal](overlays/bare-metal)
-
+* [vsphere](overlays/vsphere)
+* 
 ### AWS
 
 [aws](overlays/aws) installs a basic StorageSystem.  The StorageSystem will configure the OpenShift Container Storage Operator and also install a StorageCluster and OCSInitilization object to configure the storage cluster.  The StorageCluster is configured to work with gp2 storage on an AWS cluster.
-
 
 ### Baremetal
 
 [bare-metal](overlays/bare-metal) installs a basic StorageSystem.  The StorageSystem will configure the OpenShift Container Storage Operator and also install a StorageCluster and OCSInitilization object to configure the storage cluster.  The StorageCluster is configured to work with local storage on an Baremetal cluster.
 
-In order for ODF/OCS to configure storage using this overlay it expects nodes with the following label to be present on the nodes ODF/OCS will install the cluster:
+### vSphere
 
-```
-cluster.ocs.openshift.io/openshift-storage=""
-```
-
-You will need to manually add this label to nodes if they are not already present:
-
-```
-oc label nodes <node-name> cluster.ocs.openshift.io/openshift-storage="" --overwrite=true
-```
-
-For additional automation for labeling nodes see [node-labeler](../config-helpers/node-labeler/)
+[vsphere](overlays/vsphere) installs a basic StorageSystem.  The StorageSystem will configure the OpenShift Container Storage Operator and also install a StorageCluster and OCSInitilization object to configure the storage cluster.  The StorageCluster is configured to work with thin storage on a vSphere cluster and enables flexible scaling to distribute devices evenly across all nodes, regardless of distribution in zones or racks.   
 
 ## Usage
 
@@ -61,9 +51,4 @@ kind: Kustomization
 
 bases:
   - github.com/redhat-cop/gitops-catalog/openshift-data-foundation-operator/instance/overlays/default?ref=main
-```
-
-Set default storage class
-```
-oc patch storageclass ocs-storagecluster-cephfs -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 ```
