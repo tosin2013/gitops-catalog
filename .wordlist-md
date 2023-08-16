@@ -8,6 +8,7 @@ AmazonS
 AmazonSageMakerFullAccess
 Ansible
 ArgoCD
+ArgoCD's
 Bitnami
 CICD
 CRD
@@ -41,6 +42,7 @@ Kubernetes
 Kyverno
 LDAP
 Lifecycle
+LVM
 MTA
 MachineConfig
 MultiClusterHub
@@ -70,6 +72,7 @@ Sagemaker
 SecretManager
 SecureCluster
 ServiceMesh
+Skupper
 SonarQube
 Stackrox
 StorageCluster
@@ -103,6 +106,7 @@ cicd
 cli
 clusterissuer
 clusterrolebinding
+composable
 config
 configmap
 datasource
@@ -161,6 +165,7 @@ oc
 ocp
 ocs
 odf
+olm
 opendatahub
 openshift
 operatorGroup
