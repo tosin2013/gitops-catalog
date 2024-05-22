@@ -19,3 +19,11 @@ resources:
 components:
   - ../../components/kustomize-build-enable-helm
 ```
+
+## Known Incompatibilities
+
+### kustomize-build-policy-generator
+
+This component is not compatible with the [kustomize-build-policy-generator](openshift-gitops-operator/instance/components/kustomize-build-policy-generator) component.
+
+Both components are attempting to patch the `spec.kustomizeBuildOptions` field.
