@@ -7,5 +7,5 @@ resources:
 patches:
   - target:
       kind: Subscription
-      name: advanced-cluster-management
+      name: rhods-operator
     path: patch-channel.yaml
