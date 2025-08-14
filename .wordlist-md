@@ -14,6 +14,7 @@ ArgoCD
 ArgoCD's
 Authorino
 AutoCreateUserSchema
+Autoscaler
 Bitnami
 CICD
 CRD
@@ -68,6 +69,7 @@ Logstash
 MTA
 MachineConfig
 MachineSet
+MetalLB
 Minio
 ModelMesh
 MultiClusterHub
@@ -119,6 +121,7 @@ TempoStack
 Thanos
 TrustyAI
 UI
+VPA
 VolSync
 Workspaces
 XAI
@@ -207,6 +210,8 @@ libvirt
 lifecycle
 linux
 machineset
+md
+metallb
 microservices
 mig
 modelregistry
@@ -258,6 +263,7 @@ serverless
 serviceaccount
 servicemesh
 sfdc
+spiffe
 strimzi
 sublicense
 tekton
