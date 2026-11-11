@@ -1,0 +1,15 @@
+- op: replace
+  path: /spec
+  value:
+    llm:
+      providers:
+        - name: red_hat_openshift_ai
+          type: rhoai_vllm
+          credentialsSecretRef:
+            name: rhoai-api-keys
+          url: https://REPLACE_WITH_HOST/v1
+          models:
+            - name: granite-4-0-h-tiny
+    ols:
+      defaultModel: granite-4-0-h-tiny
+      defaultProvider: red_hat_openshift_ai

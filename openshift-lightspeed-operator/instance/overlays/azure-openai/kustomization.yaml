@@ -1,0 +1,16 @@
+# azure-entra is this same OLSConfig. The secret name stays
+# azure-api-keys. Entra ID uses client_id, client_secret, and
+# tenant_id in that secret instead of apitoken.
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../base
+
+patches:
+  - target:
+      group: ols.openshift.io
+      version: v1alpha1
+      kind: OLSConfig
+      name: cluster
+    path: patch-provider.yaml

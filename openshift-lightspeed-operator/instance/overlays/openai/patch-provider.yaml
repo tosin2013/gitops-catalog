@@ -1,0 +1,15 @@
+- op: replace
+  path: /spec
+  value:
+    llm:
+      providers:
+        - name: openai
+          type: openai
+          credentialsSecretRef:
+            name: openai
+          url: https://api.openai.com/v1
+          models:
+            - name: REPLACE_WITH_MODEL
+    ols:
+      defaultModel: REPLACE_WITH_MODEL
+      defaultProvider: openai

@@ -45,6 +45,7 @@ DevWorkspaces
 Devfile
 DotNET
 ECK
+Entra
 Eventing
 FullAccess
 GPUs
@@ -74,6 +75,7 @@ Kyverno
 LDAP
 LVM
 Lifecycle
+Lightspeed
 Logstash
 MTA
 MTC
@@ -93,6 +95,7 @@ OADP
 OAuth
 OCSInitialization
 OLM
+OLSConfig
 OSSM
 Observability
 OpenDataHub

@@ -1,0 +1,17 @@
+- op: replace
+  path: /spec
+  value:
+    llm:
+      providers:
+        - name: azure
+          type: azure_openai
+          credentialsSecretRef:
+            name: azure-api-keys
+          apiVersion: REPLACE_WITH_AZURE_API_VERSION
+          deploymentName: REPLACE_WITH_AZURE_DEPLOYMENT
+          url: https://REPLACE_WITH_RESOURCE.openai.azure.com/
+          models:
+            - name: REPLACE_WITH_MODEL
+    ols:
+      defaultModel: REPLACE_WITH_MODEL
+      defaultProvider: azure

@@ -1,0 +1,16 @@
+- op: replace
+  path: /spec
+  value:
+    llm:
+      providers:
+        - name: watsonx
+          type: watsonx
+          credentialsSecretRef:
+            name: watsonx-api-keys
+          url: https://REPLACE_WITH_WATSONX_HOST
+          projectID: REPLACE_WITH_PROJECT_ID
+          models:
+            - name: ibm/REPLACE_WITH_MODEL
+    ols:
+      defaultModel: ibm/REPLACE_WITH_MODEL
+      defaultProvider: watsonx

@@ -1,0 +1,18 @@
+- op: replace
+  path: /spec
+  value:
+    llm:
+      providers:
+        - name: google
+          type: google_vertex
+          credentialsSecretRef:
+            name: llmcreds
+          credentialKey: gcp-service-account.json
+          googleVertexConfig:
+            projectID: REPLACE_WITH_GCP_PROJECT
+            location: global
+          models:
+            - name: gemini-4-argon
+    ols:
+      defaultModel: gemini-4-argon
+      defaultProvider: google

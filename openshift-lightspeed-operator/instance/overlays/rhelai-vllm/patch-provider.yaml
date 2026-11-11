@@ -1,0 +1,15 @@
+- op: replace
+  path: /spec
+  value:
+    llm:
+      providers:
+        - name: rhelai
+          type: rhelai_vllm
+          credentialsSecretRef:
+            name: rhelai-api-keys
+          url: https://REPLACE_WITH_HOST/v1
+          models:
+            - name: models/REPLACE_WITH_MODEL
+    ols:
+      defaultProvider: rhelai
+      defaultModel: models/REPLACE_WITH_MODEL
