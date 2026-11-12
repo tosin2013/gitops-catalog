@@ -1,10 +1,10 @@
 # Advanced Cluster Management instances
 
-Supports `MultiClusterHub` CR and the `MultiClusterObservability`.
+Supports `MultiClusterHub`, `MultiClusterEngine`, and the `MultiClusterObservability`.
 
 ## Base
 
-Installs the `MultiClusterHub`.
+Installs the `MultiClusterHub` and the `MultiClusterEngine`.
 
 There is no customization to do at this point. Simply, apply the `base`.
 

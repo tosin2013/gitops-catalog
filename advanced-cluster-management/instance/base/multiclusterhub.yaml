@@ -6,3 +6,7 @@ metadata:
   namespace: open-cluster-management
   annotations:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+spec:
+  localClusterName: local-cluster
+  networkPolicies:
+    enabled: true
